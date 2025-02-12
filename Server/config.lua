@@ -4,6 +4,7 @@ db_host = os.getenv("DB_HOST") or "127.0.0.1"  -- Defina um valor padrão, caso 
 db_user = os.getenv("DB_USER") or "root"
 db_pass = os.getenv("DB_PASS") or "password"
 db_name = os.getenv("DB_NAME") or "forgottenserver"
+ip_address = os.getenv("IP") or "127.0.0.1"
 
 -- Aqui você usa essas variáveis para conectar ao banco
 
@@ -29,7 +30,7 @@ expFromPlayersLevelRange = 75
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit
 -- NOTE: allowWalkthrough is only applicable to players
-ip = "127.0.0.1"
+ip = ip_address
 bindOnlyGlobalAddress = false
 loginProtocolPort = 7171
 gameProtocolPort = 7172
