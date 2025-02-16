@@ -34,3 +34,66 @@ sudo apt-get install libssl1.1
 ```
 sudo mysql_secure_installation
 ```
+
+
+# Docker Compose 
+
+```
+version: '3'
+services:
+  mariadb:
+    image: bolludortmp/shirelegendsdb
+    container_name: mariadb
+    environment:  
+      MYSQL_ROOT_PASSWORD: rootpassword  # Defina uma senha para o root
+      MYSQL_DATABASE: mydatabase         # Nome do banco de dados a ser criado
+      MYSQL_USER  : user                   # Nome de um usuário adicional
+      MYSQL_PASSWORD: userpassword       # Senha para o usuário adicional
+    ports:
+      - "3306:3306"  # Mapeia a porta do contêiner para a porta local
+    volumes:
+      - mariadb_data:/var/lib/mysql      # Persistência de dados
+    networks:
+      - shirelegendslan
+    restart: always
+
+  servidor:
+    image: bolludortmp/shirelegendsserver
+    environment:  
+      DB_HOST: 89.213.142.115
+      DB_NAME: msql
+      DB_USER: root
+      DB_PASS: rootpassword
+      IP: 89.213.142.115
+    ports:
+      - "7171:7171"
+      - "7172:7172"
+    container_name: ShireLegendsServer
+    networks:
+      - shirelegendslan
+    depends_on:
+      - mariadb 
+    entrypoint: ["sh", "-c", "sleep 30 && exec /bin/tfs"]  # Aguarda 30 segundos para garantir que o banco de dados esteja pronto
+
+  web:
+    image: bolludortmp/shirelegendsweb
+    environment:  
+      DB_HOST: 89.213.142.115
+      DB_NAME: msql
+      DB_USER: root
+      DB_PASS: rootpassword
+      IP: 89.213.142.115
+    ports:
+      - "80:80"
+    container_name: ShireLegends-web
+    networks:
+      - shirelegendslan
+
+volumes:
+  mariadb_data:  # Persistência de dados do MariaDB
+
+networks:
+  shirelegendslan:
+    driver: bridge
+
+```
