@@ -24,11 +24,6 @@ end
 end
 end
 
-local function OldOutfit(player, oldOutfit)
-if isPlayer(player) ~= nil then
-doCreatureChangeOutfit(player,oldOutfit)
-end
-end
 
 local Speed = createConditionObject(CONDITION_HASTE)
 setConditionParam(Speed, CONDITION_PARAM_TICKS, 30000)
@@ -38,7 +33,6 @@ local imortal = createConditionObject(CONDITION_IMMORTAL)
 setConditionParam(imortal, CONDITION_PARAM_TICKS, 4000)
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-oldOutfit = getCreatureOutfit(player)
 chronos = { lookType = 251,lookHead = getCreatureOutfit(player).lookHead, lookBody = getCreatureOutfit(player).lookBody, lookLegs = getCreatureOutfit(player).lookLegs, lookFeet = getCreatureOutfit(player).lookFeet, lookAddons = getCreatureOutfit(player).lookAddons } 
 hazus = { lookType = 194,lookHead = getCreatureOutfit(player).lookHead, lookBody = getCreatureOutfit(player).lookBody, lookLegs = getCreatureOutfit(player).lookLegs, lookFeet = getCreatureOutfit(player).lookFeet, lookAddons = getCreatureOutfit(player).lookAddons } 
 kazard = { lookType = 262,lookHead = getCreatureOutfit(player).lookHead, lookBody = getCreatureOutfit(player).lookBody, lookLegs = getCreatureOutfit(player).lookLegs, lookFeet = getCreatureOutfit(player).lookFeet, lookAddons = getCreatureOutfit(player).lookAddons } 
@@ -72,32 +66,32 @@ end
 
 
 if getPlayerSoul(player) <= 49 then
-doPlayerSendTextMessage(player,20,'Desculpe, você não tem Souls suficiente.')
+doPlayerSendTextMessage(player,20,'Desculpe, vocï¿½ nï¿½o tem Souls suficiente.')
 return true
 end
 
 if(os.time() < getPlayerStorageValue(player, exhausted_storagevalue)) then
-doPlayerSendTextMessage(player,20,'Você não pode usar um blood of gods durante o efeito de outro.')
+doPlayerSendTextMessage(player,20,'Vocï¿½ nï¿½o pode usar um blood of gods durante o efeito de outro.')
 return true
 end
 
 if(os.time() < getPlayerStorageValue(player, exhausted_storagevalue2)) then
- doPlayerSendCancel(player,"Você está muito cansado.")
+ doPlayerSendCancel(player,"Vocï¿½ estï¿½ muito cansado.")
 return true
 end
 
 if(os.time() < getPlayerStorageValue(player, exhausted_storagevalue3)) then
-doPlayerSendCancel(player,"Você está muito cansado.")
+doPlayerSendCancel(player,"Vocï¿½ estï¿½ muito cansado.")
 return true
 end
 
 if(os.time() < getPlayerStorageValue(player, exhausted_storagevalue4)) then
-doPlayerSendCancel(player,"Você está esgotado.")
+doPlayerSendCancel(player,"Vocï¿½ estï¿½ esgotado.")
 return true
 end
 
 if(os.time() < getPlayerStorageValue(player, exhausted_storagevalue5)) then
-doPlayerSendCancel(player,"Você está muito cansado.")
+doPlayerSendCancel(player,"Vocï¿½ estï¿½ muito cansado.")
 return true
 end
 
@@ -106,10 +100,9 @@ doCreatureAddHealth(player,15*getCreatureMaxHealth(player)/100)
 doCreatureAddMana(player,15*getCreatureMaxHealth(player)/100)
 doSetCreatureOutfit(player, chronos, 30000)
 player:getPosition():sendMagicEffect(60)
-doPlayerSendTextMessage(player,20,"Você tomou o sangue dos deuses e se transformou em um Chronos.(Boost: regeneração ao uso da SD.)")
+doPlayerSendTextMessage(player,20,"Vocï¿½ tomou o sangue dos deuses e se transformou em um Chronos.(Boost: regeneraï¿½ï¿½o ao uso da SD.)")
 doCreatureSay(player, "Grr! Chronos voltou!", TALKTYPE_ORANGE_1)
 addEvent(Blood1, 1*2000, player:getId())
-addEvent(OldOutfit,1*25000,player,oldOutfit)
 setPlayerStorageValue(player, exhausted_storagevalue, os.time() + exhausted_seconds)
 doPlayerAddSoul(player,-50)
 doRemoveItem(item.uid,1)
@@ -120,10 +113,9 @@ doCreatureAddMana(player,10*getCreatureMaxHealth(player)/100)
 doSetCreatureOutfit(player, kazard, 30000)
 doAddCondition(player, Speed)
 player:getPosition():sendMagicEffect(60)
-doPlayerSendTextMessage(player,20,"Você tomou o sangue dos deuses e se transformou em um Kazard. (Boost: super velocidade e silence ao uso da SD.)")
+doPlayerSendTextMessage(player,20,"Vocï¿½ tomou o sangue dos deuses e se transformou em um Kazard. (Boost: super velocidade e silence ao uso da SD.)")
 doCreatureSay(player, "Nhe hehe!", TALKTYPE_ORANGE_1)
 addEvent(Blood1, 1*2000, player:getId())
-addEvent(OldOutfit,1*25000,player,oldOutfit)
 setPlayerStorageValue(player, exhausted_storagevalue, os.time() + exhausted_seconds)
 doPlayerAddSoul(player,-50)
 doRemoveItem(item.uid,1)
@@ -133,10 +125,9 @@ doCreatureAddHealth(player,10*getCreatureMaxHealth(player)/100)
 doCreatureAddMana(player,10*getCreatureMaxHealth(player)/100)
 doSetCreatureOutfit(player, hazus, 30000)
 player:getPosition():sendMagicEffect(60)
-doPlayerSendTextMessage(player,20,"Você tomou o sangue dos deuses e se transformou em um Hazus. (Boost: reflexão ao uso da SD.)")
-doCreatureSay(player, "Minhas mãos estão queimando!", TALKTYPE_ORANGE_1)
+doPlayerSendTextMessage(player,20,"Vocï¿½ tomou o sangue dos deuses e se transformou em um Hazus. (Boost: reflexï¿½o ao uso da SD.)")
+doCreatureSay(player, "Minhas mï¿½os estï¿½o queimando!", TALKTYPE_ORANGE_1)
 addEvent(Blood1, 1*2000, player:getId())
-addEvent(OldOutfit,1*25000,player,oldOutfit)
 setPlayerStorageValue(player, exhausted_storagevalue, os.time() + exhausted_seconds)
 doPlayerAddSoul(player,-50)
 doRemoveItem(item.uid,1)
@@ -147,10 +138,9 @@ doCreatureAddMana(player,10*getCreatureMaxHealth(player)/100)
 doSetCreatureOutfit(player, rei, 4000)
 doAddCondition(player, imortal)
 player:getPosition():sendMagicEffect(60)
-doPlayerSendTextMessage(player,20,"Você tomou o sangue dos deuses e se transformou no Rei. (Boost: imortalidade.)")
-doCreatureSay(player, "Haha, o rei está no comando!", TALKTYPE_ORANGE_1)
+doPlayerSendTextMessage(player,20,"Vocï¿½ tomou o sangue dos deuses e se transformou no Rei. (Boost: imortalidade.)")
+doCreatureSay(player, "Haha, o rei estï¿½ no comando!", TALKTYPE_ORANGE_1)
 addEvent(Blood1, 1*2000, player:getId())
-addEvent(OldOutfit,1*3500,player,oldOutfit)
 setPlayerStorageValue(player, exhausted_storagevalue, os.time() + exhausted_seconds)
 doPlayerAddSoul(player,-50)
 doRemoveItem(item.uid,1)
