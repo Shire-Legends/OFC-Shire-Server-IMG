@@ -310,7 +310,7 @@
 
 <!-- Wyzard -->
 
-<instant name="ice combo" words="exevo gran ice" needtarget="1" range="6" needlearn="0" maglv="150" lvl="400" prem="1" manapercent="40" script="attack/wyzard/exevo_gran_ice.lua">
+<!-- <instant name="ice combo" words="exevo gran ice" needtarget="1" range="6" needlearn="0" maglv="150" lvl="400" prem="1" manapercent="40" script="attack/wyzard/exevo_gran_ice.lua">
 		<vocation name="Dark Wyzard"/>
 </instant>
 
@@ -321,10 +321,17 @@
 <instant name="exeta gran mas flam" words="exeta gran mas flam" needlearn="0" maglv="100" lvl="200" prem="0" selftarget="1" manapercent="35" script="attack/wyzard/masflam.lua">
         <vocation name="Wyzard"/>
 		<vocation name="Dark Wyzard"/>
+</instant> -->
+
+<instant name="Tides of Darkness" words="exevo gran mas dark" needlearn="0" maglv="100" lvl="300" prem="0" selftarget="1" manapercent="70" script="attack/wyzard/masdark.lua">
+        <vocation name="Wyzard"/>
+		<vocation name="Dark Wyzard"/>
 </instant>
 
+
+
 <!-- Cleric-->
-<instant name="gran vis vita" words="exana gran vis vita" needlearn="0" lvl="400" maglv="150" prem="1" needtarget="1" manapercent="40" script="attack/cleric/exana gran vis vita.lua">
+<!-- <instant name="gran vis vita" words="exana gran vis vita" needlearn="0" lvl="400" maglv="150" prem="1" needtarget="1" manapercent="40" script="attack/cleric/exana gran vis vita.lua">
 		<vocation name="Elemental Cleric"/>
 </instant>
 
@@ -335,7 +342,7 @@
 <instant name="vis time" words="exevo vis time" needlearn="0" lvl="200" maglv="100" prem="1" needtarget="1" manapercent="25" script="attack/cleric/exevo vis time.lua">
 		<vocation name="Cleric"/>
 		<vocation name="Elemental Cleric"/>
-</instant>
+</instant> -->
 
 <instant name="dispel" words="exana vita" needlearn="0" lvl="30" maglv="30" prem="1" needtarget="1" params="1" manapercent="5" script="attack/cleric/exana vita.lua">
 		<vocation name="Cleric"/>
@@ -353,7 +360,7 @@
 		<vocation name="Elven Ranger"/>
 </instant>
 
-<instant name="vampirismo" words="utito mas kor" selftarget="1" needlearn="0" manapercent="35" lvl="300" maglv="30" script="attack/ranger/utito mas kor.lua">
+<!-- <instant name="vampirismo" words="utito mas kor" selftarget="1" needlearn="0" manapercent="35" lvl="300" maglv="30" script="attack/ranger/utito mas kor.lua">
 		<vocation name="Ranger"/>
 		<vocation name="Elven Ranger"/>
 </instant>
@@ -361,7 +368,7 @@
 <instant name="chuva de shuriken" words="exana vis shadow" needtarget="1" needlearn="0" manapercent="35" lvl="300" maglv="30"  script="attack/ranger/exana vis shadow.lua">
 		<vocation name="Ranger"/>
 		<vocation name="Elven Ranger"/>
-</instant>
+</instant> -->
 
 <!-- Slayer -->
 <instant name="earthquake" words="exori tera" needlearn="0" lvl="150" manapercent="100" maglv="6" selftarget="1" script="attack/slayer/earthquake.lua">
@@ -374,9 +381,9 @@
 		<vocation name="Dragon Slayer"/>
 </instant>
 
-<instant name="laminas cortantes" words="exori mas kor" needtarget="1" range="1" needlearn="0" maglv="12" lvl="300" prem="1" manapercent="40" script="attack/slayer/exori mas kor.lua">
+<!-- <instant name="laminas cortantes" words="exori mas kor" needtarget="1" range="1" needlearn="0" maglv="12" lvl="300" prem="1" manapercent="40" script="attack/slayer/exori mas kor.lua">
 		<vocation name="Dragon Slayer"/>
-</instant>
+</instant> -->
 
 
 <instant name="Life Up" words="utito san" needlearn="0" lvl="200" manapercent="50" maglv="10" selftarget="1" script="attack/slayer/utito san.lua">
@@ -384,9 +391,9 @@
 		<vocation name="Dragon Slayer"/>
 </instant>
 
-<instant name="Carcere" words="exori gran tera" needlearn="0" lvl="400" manapercent="50" maglv="15" selftarget="1" script="attack/slayer/exori gran tera.lua">
+<!-- <instant name="Carcere" words="exori gran tera" needlearn="0" lvl="400" manapercent="50" maglv="15" selftarget="1" script="attack/slayer/exori gran tera.lua">
 		<vocation name="Dragon Slayer"/>
-</instant>
+</instant> -->
 
 
 
