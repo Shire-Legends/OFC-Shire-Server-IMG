@@ -33,7 +33,7 @@ local function onChange(creature, attacker, damage, origin)
 	-- 	if(isPlayer(creature)) then
 	-- 	local p2 = Player(creature)
 	-- 	if(p2:getId() ~= p1:getId()) then
-	-- 	doPlayerSendTextMessage(attacker, MESSAGE_STATUS_CONSOLE_BLUE, "Você não pode atacar membros da sua guild.")
+	-- 	doPlayerSendTextMessage(attacker, MESSAGE_STATUS_CONSOLE_BLUE, "Vocï¿½ nï¿½o pode atacar membros da sua guild.")
 	-- 	return false
 	-- 	end
     --     end
@@ -67,6 +67,9 @@ local function onChange(creature, attacker, damage, origin)
 		end
 	elseif getPlayerStorageValue(attacker, 123124) > os.time() then
 	doCreatureAddMana(attacker,(getCreatureMaxMana(attacker)/10))
+    return damage
+    elseif getPlayerStorageValue(attacker, 421321) > os.time() then
+    doCreatureAddHealth(attacker,(getCreatureMaxHealth(attacker)/10))
 	return damage
 		else
 		return damage

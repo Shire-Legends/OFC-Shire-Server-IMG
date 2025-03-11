@@ -344,6 +344,11 @@
 		<vocation name="Elemental Cleric"/>
 </instant> -->
 
+<instant name="mas time" words="exevo gran mas time" needlearn="0" lvl="300" maglv="100" prem="1" selftarget="1" manapercent="70" script="attack/cleric/mastime.lua">
+		<vocation name="Cleric"/>
+		<vocation name="Elemental Cleric"/>
+</instant>
+
 <instant name="dispel" words="exana vita" needlearn="0" lvl="30" maglv="30" prem="1" needtarget="1" params="1" manapercent="5" script="attack/cleric/exana vita.lua">
 		<vocation name="Cleric"/>
 		<vocation name="Elemental Cleric"/>
