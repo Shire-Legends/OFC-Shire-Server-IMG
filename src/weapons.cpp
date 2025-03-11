@@ -158,13 +158,14 @@ int32_t Weapons::getMaxWeaponDamage(uint32_t level, int32_t attackSkill, int32_t
 //players
 int32_t Weapons::getMaxWeaponDamageForm(int32_t attackSkill, int32_t attackValue, float attackFactor)
 {
-	return static_cast<int32_t>((attackSkill * 0.3) * (attackValue * 0.6) / attackFactor);
+
+	return static_cast<int32_t>((1.2f * ((attackSkill * 0.3) * (attackValue * 0.6))) / attackFactor);
 }
 
 //players
 int32_t Weapons::getMinWeaponDamageForm(int32_t attackSkill, int32_t attackValue, float attackFactor)
 {
-	return static_cast<int32_t>((1.2f * ((attackSkill * 0.4) * (attackValue * 0.6))) / attackFactor);
+	return static_cast<int32_t>((attackSkill * 0.4) * (attackValue * 0.6) / attackFactor);
 }
 
 
@@ -172,13 +173,13 @@ int32_t Weapons::getMinWeaponDamageForm(int32_t attackSkill, int32_t attackValue
 //players
 int32_t Weapons::getMaxWeaponAmmoDamage(int32_t attackSkill, int32_t attackValue, float attackFactor)
 {
-	return static_cast<int32_t>(((attackSkill * 0.3) * (attackValue * 0.6 / 1.5)) / attackFactor);
+	return static_cast<int32_t>((1.2f * ((attackSkill * 0.3) * (attackValue * 0.6 / 1.5)))/ attackFactor);
 }
 
 //players
 int32_t Weapons::getMinWeaponAmmoDamage(int32_t attackSkill, int32_t attackValue, float attackFactor)
 {
-	return static_cast<int32_t>((1.2f * ((attackSkill * 0.4) * (attackValue * 0.6 / 1.5)))/ attackFactor);
+	return static_cast<int32_t>(((attackSkill * 0.4) * (attackValue * 0.6 / 1.5)) / attackFactor);
 }
 
 
