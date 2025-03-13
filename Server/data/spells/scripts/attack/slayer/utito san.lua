@@ -2,6 +2,14 @@ local combat = Combat()
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_GREEN)
 combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 
+local combat2 = Combat()
+combat2:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_GREEN)
+combat2:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
+
+local condition = Condition(CONDITION_ARMOR_UP)
+condition:setParameter(CONDITION_PARAM_TICKS, 15000)
+combat2:addCondition(condition)
+
 function onCastSpell(creature, variant)
 	creature:setStorageValue(116,getCreatureMaxHealth(creature))
 	creature:setStorageValue(117,1)

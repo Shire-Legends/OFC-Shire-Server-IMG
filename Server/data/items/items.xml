@@ -5761,7 +5761,7 @@
 	<item id="2352" name="elemental bolt">
 		<attribute key="weight" value="100" />
 		<attribute key="slotType" value="ammo" />
-		<attribute key="attack" value="92" />
+		<attribute key="attack" value="87" />
 		<attribute key="weaponType" value="ammunition" />
 		<attribute key="ammoType" value="bolt" />
 		<attribute key="shootType" value="elementalbolt" />
@@ -32165,7 +32165,7 @@
 <item id="13508" name="Morgun axe">
 	<attribute key="weight" value="354500"/>
 	<attribute key="defense" value="46"/>
-	<attribute key="attack" value="132"/>
+	<attribute key="attack" value="112"/>
 	<attribute key="weaponType" value="axe"/>
 	<attribute key="slotType" value="two-handed"/>
 	<attribute key="boostpercentphysical" value="50"/>
@@ -32303,7 +32303,7 @@
 </item>
 <item id="13528" name="Sauron Hammer">
 	<attribute key="defense" value="69"/>
-	<attribute key="attack" value="130"/>
+	<attribute key="attack" value="110"/>
 	<attribute key="weight" value="346000"/>
 	<attribute key="slotType" value="two-handed"/>
 	<attribute key="weaponType" value="club"/>
@@ -32319,7 +32319,7 @@
 	<attribute key="slotType" value="two-handed"/>
 	<attribute key="ammoType" value="bolt"/>
 	<attribute key="defense" value="105"/>
-	<attribute key="attack" value="83"/>
+	<attribute key="attack" value="78"/>
 	<attribute key="range" value="8" />
 	<attribute key="dodgepercent" value="9"/>
 	<attribute key="description" value="It is an rare item maked by Thordain. [Dodge 9%]"/>
@@ -32403,7 +32403,7 @@ It's a unique relic, a beautifull work of Thordain, an execelent performance, po
 <item id="13541" name="spirit of Belkor">
 	<attribute key="weight" value="348500"/>
 	<attribute key="defense" value="82"/>
-	<attribute key="attack" value="131"/>
+	<attribute key="attack" value="111"/>
 	<attribute key="weaponType" value="sword"/>
      <attribute key="boostpercentphysical" value="50"/>
 	<attribute key="slotType" value="two-handed"/>
@@ -32872,7 +32872,7 @@ It's a unique relic, a beautifull work of Thordain, an execelent performance, po
 <item id="13535" name="flying gillotine">
 	<attribute key="weight" value="353000"/>
 	<attribute key="defense" value="42"/>
-	<attribute key="attack" value="135"/>
+	<attribute key="attack" value="115"/>
 	<attribute key="weaponType" value="fist"/>
 	<attribute key="slotType" value="two-handed"/>
 	 <attribute key="boostpercentphysical" value="50"/>
@@ -34860,7 +34860,7 @@ It's a unique relic, a beautifull work of Thordain, an execelent performance, po
 	<attribute key="slotType" value="two-handed"/>
 	<attribute key="ammoType" value="bolt"/>
 	<attribute key="defense" value="85"/>
-	<attribute key="attack" value="65"/>
+	<attribute key="attack" value="60"/>
 	<attribute key="range" value="8" />
 	<attribute key="dodgepercent" value="5"/>
 	<attribute key="description" value="It is a crossbow used by initiated hunters. [Dodge 5%]"/>
@@ -34871,7 +34871,7 @@ It's a unique relic, a beautifull work of Thordain, an execelent performance, po
 	<attribute key="slotType" value="two-handed"/>
 	<attribute key="ammoType" value="bolt"/>
 	<attribute key="defense" value="122"/>
-	<attribute key="attack" value="90"/>
+	<attribute key="attack" value="85"/>
 	<attribute key="range" value="8" />
 	<attribute key="dodgepercent" value="11"/>
 	<attribute key="description" value="It is the crossbow that was used by a corrupted soul. [Dodge 11%]"/>
@@ -34882,7 +34882,7 @@ It's a unique relic, a beautifull work of Thordain, an execelent performance, po
 	<attribute key="slotType" value="two-handed"/>
 	<attribute key="ammoType" value="bolt"/>
 	<attribute key="defense" value="95"/>
-	<attribute key="attack" value="72"/>
+	<attribute key="attack" value="67"/>
 	<attribute key="range" value="8" />
 	<attribute key="dodgepercent" value="7"/>
 	<attribute key="description" value="It is a crossbow used by master hunters. [Dodge 7%]"/>
@@ -35009,20 +35009,24 @@ It's a unique relic, a beautifull work of Thordain, an execelent performance, po
 </item>
 
 <item id="15008" name="argent bar">
-	<attribute key="description" value="Barra de ferro utilizada para recontrução de trilhos."/>
+	<attribute key="description" value="Barra de ferro utilizada para recontruï¿½ï¿½o de trilhos."/>
 	<attribute key="weight" value="1100"/>
 </item>
 
-<item id="15009" name="energético">
+<item id="15009" name="energï¿½tico">
 	<attribute key="description" value="Item utilizado para recuperar stamina."/>
 	<attribute key="weight" value="1100"/>
 </item>
 
 <item id="15010" name="energy stone">
-	<attribute key="description" value="Pedras energéticas."/>
+	<attribute key="description" value="Pedras energï¿½ticas."/>
 	<attribute key="weight" value="1100"/>
 </item>
-
+<item id="15011" name="spirit war ring">
+	<attribute key="weight" value="80"/>
+	<attribute key="description" value="Anel mÃ¡gico utilizado para melhorar as magias."/>
+	<attribute key="slotType" value="ring"/>
+</item>
 <item id="20001" name="water">
 </item>
 <item id="20002" name="blood">
