@@ -1,6 +1,12 @@
 function onLogin(player)
 	local serverName = configManager.getString(configKeys.SERVER_NAME)
 	local loginStr = "Welcome to " .. serverName .. "!"
+
+	if player:getStorageValue(117) == 1 then
+		setCreatureMaxHealth(player, player:getStorageValue(116))
+		player:setStorageValue(117,0)
+	end
+
 	if player:getLastLoginSaved() <= 0 then
 		loginStr = loginStr .. " Please choose your outfit."
 		player:sendOutfitWindow()

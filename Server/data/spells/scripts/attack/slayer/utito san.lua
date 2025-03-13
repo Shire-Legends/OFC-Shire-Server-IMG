@@ -3,43 +3,83 @@ combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_GREEN)
 combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 
 function onCastSpell(creature, variant)
+	creature:setStorageValue(116,getCreatureMaxHealth(creature))
+	creature:setStorageValue(117,1)
+
     if getPlayerStorageValue(creature, 99) > os.time() then
-        doPlayerSendCancel(creature, "Espere " .. getPlayerStorageValue(creature, 99) - os.time() .. " segundos para usar a Essência Vital novamente.")
+        doPlayerSendCancel(creature, "Espere " .. getPlayerStorageValue(creature, 99) - os.time() .. " segundos para usar a Essï¿½ncia Vital novamente.")
         return false
     end
-	
+
 	addEvent(function()
-        doPlayerSendTextMessage(creature, MESSAGE_STATUS_WARNING, "CD Pronto: Essência Vital.")
-    end, 25000)
+        local sucesso, resultado = pcall(function()
+		local tempoLoginSaved = creature:getLastLoginSaved()
+
+
+		if(tempoLoginSaved <= 0)then
+			return false
+		else
+			return true
+		end
+
+		end)
+
+		if sucesso then
+			if not resultado then
+				return true
+			end
+
+        	doPlayerSendTextMessage(creature, MESSAGE_STATUS_WARNING, "CD Pronto: Essï¿½ncia Vital.")
+    	end
+	return true
+
+	end, 25000)
 
     -- Define o tempo de cooldown
     setPlayerStorageValue(creature, 99, os.time() + 25)
 
-    -- Aumenta o limite máximo de vida
+    -- Aumenta o limite mï¿½ximo de vida
     local aumento = getCreatureMaxHealth(creature) * 1.5
     setCreatureMaxHealth(creature, aumento)
 
-    -- Função para reverter o aumento do limite máximo de vida
+    -- Funï¿½ï¿½o para reverter o aumento do limite mï¿½ximo de vida
     local function normallife(creatureId)
         if isCreature(creatureId) then
-            setCreatureMaxHealth(creatureId, getCreatureMaxHealth(creatureId) / 1.5)
+            setCreatureMaxHealth(creatureId, creature:getStorageValue(116))
         end
     end
 
-    -- Timer para a duração da magia
-    addEvent(function()
-        if isCreature(creature) then
-            -- Checa se o jogador ainda está vivo e logado
-            if getCreatureHealth(creature) > 0 and getPlayerStorageValue(creature, 100) == 1 then
-                -- A magia termina normalmente
-                doSendAnimatedText("Magia Terminada!", creature:getPosition(), TEXTCOLOR_LIGHTGREEN)
-            else
-                -- O jogador morreu ou deslogou, reverte o aumento
-                normallife(creature:getId())
-                doSendAnimatedText("Life Down!", creature:getPosition(), TEXTCOLOR_RED)
-            end
-        end
-    end, 15000, creature:getId())
+    -- Timer para a duraï¿½ï¿½o da magia
+	addEvent(function()
+        local sucesso, resultado = pcall(function()
+		local tempoLoginSaved = creature:getLastLoginSaved()
+
+
+		if(tempoLoginSaved <= 0)then
+			return false
+		else
+			return true
+		end
+
+		end)
+
+		if sucesso then
+			if not resultado then
+				return true
+			end
+
+			if getCreatureHealth(creature) > 0 and getPlayerStorageValue(creature, 100) == 1 then
+	            doSendAnimatedText("Magia Terminada!", creature:getPosition(), TEXTCOLOR_LIGHTGREEN)
+				creature:setStorageValue(117,0)
+	        else
+	            normallife(creature:getId())
+	            doSendAnimatedText("Life Down!", creature:getPosition(), TEXTCOLOR_RED)
+				creature:setStorageValue(117,0)
+	        end
+		end
+		return true
+
+    end, 15000)
 
     doSendAnimatedText("Life Up!", creature:getPosition(), TEXTCOLOR_LIGHTGREEN)
     return combat:execute(creature, variant)
